@@ -8,7 +8,7 @@ import {
   TooltipContent,
 } from './ui/tooltip';
 import { LuBell, LuSearch, LuUpload, LuUser } from 'react-icons/lu';
-// TODO: import useUserContext from mediastore mfe
+import { useUserContext } from 'mediastore/UserContext';
 
 const TopBar = () => {
   const { user } = useUserContext();

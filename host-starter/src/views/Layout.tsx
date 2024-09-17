@@ -1,5 +1,5 @@
 import TopBar from '@/components/TopBar';
-// TODO: import useUserContext from mediastore mfe
+import { useUserContext } from 'mediastore/UserContext';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
