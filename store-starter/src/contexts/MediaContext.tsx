@@ -1,5 +1,5 @@
 import { useMedia } from '@/hooks/apiHooks';
-import { MediaContextType, MediaItem } from '@/types/LocalTypes';
+import { MediaContextType, MediaItem } from '@sharedTypes/DBTypes';
 import { createContext, useEffect, useState } from 'react';
 
 const MediaContext = createContext<MediaContextType | null>(null);

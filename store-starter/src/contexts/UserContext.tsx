@@ -1,6 +1,6 @@
 // UserContext.tsx
 import { useAuthentication, useUser } from '@/hooks/apiHooks';
-import { AuthContextType, Credentials } from '@/types/LocalTypes';
+import { AuthContextType, Credentials } from '@sharedTypes/DBTypes';
 import { UserWithNoPassword } from '@sharedTypes/DBTypes';
 import React, { createContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
