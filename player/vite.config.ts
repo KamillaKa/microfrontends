@@ -22,7 +22,7 @@ export default defineConfig({
     port: 3011, // Set the desired port here
   },
   preview: {
-    port: 30, // Set the desired port here
+    port: 3006, // Set the desired port here
   },
   resolve: {
     alias: {
