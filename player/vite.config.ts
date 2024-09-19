@@ -17,7 +17,6 @@ export default defineConfig({
     }),
   ],
 
-  base: '/~ilkkamtk/juutube/',
   server: {
     port: 3011, // Set the desired port here
   },
