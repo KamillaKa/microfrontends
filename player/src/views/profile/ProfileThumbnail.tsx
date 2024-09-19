@@ -1,9 +1,9 @@
-import { MediaItem } from '@sharedTypes/DBTypes';
+import { MediaItem } from '@/types/LocalTypes';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader } from '../../components/ui/card';
 import DeleteMedia from './DeleteMedia';
+import ThumbCarousel from '@/components/thumb-carousel/ThumbCarousel';
 import ModifyMedia from './ModifyMedia';
-import ThumbCarousel from 'front_and_sidebar/ThumbCarousel';
 
 const ProfileThumbnail = (props: {
   mediaItem: MediaItem;

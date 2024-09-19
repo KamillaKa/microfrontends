@@ -11,11 +11,11 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useMedia } from '@/hooks/apiHooks';
 import { useForm } from '@/hooks/formHooks';
-import { MediaItem } from '@sharedTypes/DBTypes';
+import { MediaItem } from '@/types/LocalTypes';
 import { useState } from 'react';
 import { LuPen } from 'react-icons/lu';
-import { useMedia } from 'mediastore/contextHooks';
 
 const ModifyMedia = (props: {
   mediaItem: MediaItem;

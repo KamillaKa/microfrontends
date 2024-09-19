@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 import { CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { useUserContext } from '@/hooks/contextHooks';
+import { Credentials } from '@/types/LocalTypes';
 import { useForm } from '@/hooks/formHooks';
-import { Credentials } from '@sharedTypes/DBTypes';
-import { useUserContext } from 'mediastore/contextHooks';
 
 const LoginForm = () => {
   const { handleLogin } = useUserContext();

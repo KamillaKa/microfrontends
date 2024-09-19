@@ -1,11 +1,11 @@
 import { LuLogOut, LuMail } from 'react-icons/lu';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { useUserContext } from '@/hooks/contextHooks';
 import { useEffect, useState } from 'react';
-import { MediaItem } from '@sharedTypes/DBTypes';
+import { MediaItem } from '@/types/LocalTypes';
+import { useMedia } from '@/hooks/apiHooks';
 import ProfileThumbnail from './ProfileThumbnail';
-import { useMedia } from 'mediastore/apiHooks';
-import { useUserContext } from 'mediastore/contextHooks';
 
 const UserInfo = () => {
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
@@ -15,7 +15,7 @@ const UserInfo = () => {
 
   useEffect(() => {
     if (user) {
-      getMediaByUser(user.user_id).then((data: MediaItem[]) => {
+      getMediaByUser(user.user_id).then((data) => {
         setMediaItems(data);
       });
     }

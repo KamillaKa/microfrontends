@@ -9,9 +9,9 @@ import {
   DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
-import { MediaItem } from '@sharedTypes/DBTypes';
+import { useMedia } from '@/hooks/apiHooks';
+import { MediaItem } from '@/types/LocalTypes';
 import { LuTrash } from 'react-icons/lu';
-import { useMedia } from 'mediastore/ApiHooks';
 
 const DeleteMedia = (props: {
   mediaItem: MediaItem;

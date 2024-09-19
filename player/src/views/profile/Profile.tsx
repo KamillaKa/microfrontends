@@ -1,6 +1,6 @@
 import UserInfo from './UserInfo';
 import FormSwitch from './FormSwitch';
-import { useUserContext } from 'mediastore/contextHooks';
+import { useUserContext } from '@/hooks/contextHooks';
 
 const Profile = () => {
   const { user } = useUserContext();
