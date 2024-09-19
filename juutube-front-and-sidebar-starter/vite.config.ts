@@ -6,7 +6,6 @@ import federation from '@originjs/vite-plugin-federation';
 export default defineConfig({
   plugins: [
     react(),
-    // federation config, name: front_and_sidebar,
     federation({
       name: 'front_and_sidebar',
       filename: 'remoteEntry.js',
@@ -16,7 +15,7 @@ export default defineConfig({
         './ThumbCarousel': './src/components/thumb-carousel/ThumbCarousel',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
-    })
+    }),
   ],
   server: {
     port: 3002, // Set the desired port here

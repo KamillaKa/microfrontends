@@ -11,13 +11,10 @@ import {
 } from '@/components/ui/dialog';
 import { MediaItem } from '@sharedTypes/DBTypes';
 import { LuTrash } from 'react-icons/lu';
-import { useMedia } from 'mediastore/ApiHooks';
+import { useMedia } from 'mediastore/apiHooks';
 
-const DeleteMedia = (props: {
-  mediaItem: MediaItem;
-  refreshMedia: () => void;
-}) => {
-  const { mediaItem, refreshMedia } = props;
+const DeleteMedia = (props: { mediaItem: MediaItem }) => {
+  const { mediaItem } = props;
 
   const { deleteMedia } = useMedia();
 
@@ -29,7 +26,6 @@ const DeleteMedia = (props: {
       }
       const result = await deleteMedia(mediaItem._id, token);
       alert(result.message);
-      refreshMedia();
     } catch (e) {
       console.error('delete failed', (e as Error).message);
     }

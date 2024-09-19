@@ -1,5 +1,5 @@
-import { MediaItem } from "@sharedTypes/DBTypes";
-import SidebarThumbnail from "./SidebarThumbnail";
+import { MediaItem } from '@sharedTypes/DBTypes';
+import SidebarThumbnail from './SidebarThumbnail';
 
 const Sidebar = (props: { mediaItems: MediaItem[] }) => {
   const { mediaItems } = props;

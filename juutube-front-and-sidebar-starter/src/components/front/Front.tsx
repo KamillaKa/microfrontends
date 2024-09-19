@@ -1,10 +1,8 @@
-
 import { MediaItem } from '@sharedTypes/DBTypes';
 import FrontThumbnail from './FrontThumbnail';
 
-const Front = (props: {mediaItems: MediaItem[] }) => {
-  const { mediaItems } = props
-
+const Front = (props: { mediaItems: MediaItem[] }) => {
+  const { mediaItems } = props;
   return (
     <div className="flex flex-wrap">
       {mediaItems &&

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader } from '../../components/ui/card';
 import ThumbCarousel from '@/components/thumb-carousel/ThumbCarousel';
 
-
 const FrontThumbnail = (props: { mediaItem: MediaItem }) => {
   const { mediaItem } = props;
 

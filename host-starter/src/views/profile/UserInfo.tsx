@@ -9,9 +9,8 @@ import { useUserContext } from 'mediastore/contextHooks';
 
 const UserInfo = () => {
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
-  const [refresh, setRefresh] = useState(false);
-  const { user, handleLogout } = useUserContext();
-  const { getMediaByUser } = useMedia();
+  const { user, handleLogout, refreshMediaItems } = useUserContext();
+  const { getMediaByUser } = useMedia(refreshMediaItems);
 
   useEffect(() => {
     if (user) {
@@ -19,11 +18,7 @@ const UserInfo = () => {
         setMediaItems(data);
       });
     }
-  }, [user, getMediaByUser, refresh]);
-
-  const refreshMedia = () => {
-    setRefresh(!refresh);
-  };
+  }, [user, getMediaByUser]);
 
   return (
     <>
@@ -58,11 +53,7 @@ const UserInfo = () => {
               <h2 className="text-lg font-semibold">Videos</h2>
               <div className="flex flex-wrap">
                 {mediaItems.map((mediaItem) => (
-                  <ProfileThumbnail
-                    key={mediaItem._id}
-                    mediaItem={mediaItem}
-                    refreshMedia={refreshMedia}
-                  />
+                  <ProfileThumbnail key={mediaItem._id} mediaItem={mediaItem} />
                 ))}
               </div>
             </div>

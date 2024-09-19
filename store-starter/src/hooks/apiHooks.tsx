@@ -11,6 +11,7 @@ import { useCallback } from 'react';
 
 const useMedia = (refreshMedia?: boolean, refreshSinglemedia?: boolean) => {
   const getMedia = useCallback(async () => {
+    console.log('getMedia kutsuttu');
     try {
       return await fetchData<MediaItem[]>(
         import.meta.env.VITE_MEDIA_API + '/media',
@@ -68,11 +69,14 @@ const useMedia = (refreshMedia?: boolean, refreshSinglemedia?: boolean) => {
     [refreshSinglemedia],
   );
 
-  const getMediaByUser = useCallback(async (id: number) => {
-    return await fetchData<MediaItem[]>(
-      import.meta.env.VITE_MEDIA_API + '/media/user/' + id,
-    );
-  }, []);
+  const getMediaByUser = useCallback(
+    async (id: number) => {
+      return await fetchData<MediaItem[]>(
+        import.meta.env.VITE_MEDIA_API + '/media/user/' + id,
+      );
+    },
+    [refreshMedia],
+  );
 
   const deleteMedia = async (id: string, token: string) => {
     const options = {

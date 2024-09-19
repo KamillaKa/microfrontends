@@ -7,13 +7,11 @@ import federation from '@originjs/vite-plugin-federation';
 export default defineConfig({
   plugins: [
     react(),
-    // federation config
     federation({
       name: 'juutube',
       remotes: {
         mediastore: 'http://localhost:3001/assets/remoteEntry.js',
         front_and_sidebar: 'http://localhost:3002/assets/remoteEntry.js',
-        player: 'http://localhost:3005/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),

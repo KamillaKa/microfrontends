@@ -49,12 +49,15 @@ const MediaProvider = ({ children }: { children: React.ReactNode }) => {
       console.log('updateSingleMediaItem', media);
       setSingleMediaItem(media);
     };
+
     if (!singleMediaItemId) {
       return;
     }
 
     updateSingleMediaItem(singleMediaItemId);
   }, [refreshSingleMediaItem, singleMediaItemId, getSingleMedia]);
+
+  console.log(mediaItems, refreshMediaItems);
 
   return (
     <MediaContext.Provider

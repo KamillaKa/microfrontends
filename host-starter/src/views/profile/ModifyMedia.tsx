@@ -15,15 +15,14 @@ import { useForm } from '@/hooks/formHooks';
 import { MediaItem } from '@sharedTypes/DBTypes';
 import { useState } from 'react';
 import { LuPen } from 'react-icons/lu';
-import { useMedia } from 'mediastore/contextHooks';
+import { useMedia } from 'mediastore/apiHooks';
+import { useMediaContext } from 'mediastore/contextHooks';
 
-const ModifyMedia = (props: {
-  mediaItem: MediaItem;
-  refreshMedia: () => void;
-}) => {
-  const { mediaItem, refreshMedia } = props;
+const ModifyMedia = (props: { mediaItem: MediaItem }) => {
+  const { mediaItem } = props;
   const { putMedia } = useMedia();
   const [open, setOpen] = useState(false);
+  const { refreshMedia } = useMediaContext();
 
   const initValues: Pick<MediaItem, 'title' | 'description'> & {
     tags: string;
@@ -46,8 +45,8 @@ const ModifyMedia = (props: {
         tags: inputs.tags.split(',').map((tag) => tag.trim()),
       };
       await putMedia(mediaItem._id, mediaInput, token);
-      setOpen(false);
       refreshMedia();
+      setOpen(false);
     } catch (error) {
       console.error('doModify failed', error);
     }

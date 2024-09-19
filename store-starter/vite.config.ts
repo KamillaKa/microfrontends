@@ -15,9 +15,9 @@ export default defineConfig({
       name: 'mediastore',
       filename: 'remoteEntry.js',
       exposes: {
-        './contextHooks': './src/context/contextHooks',
-        './MediaContext': './src/context/MediaContext',
-        './UserContext': './src/context/UserContext',
+        './contextHooks': './src/hooks/contextHooks',
+        './MediaContext': './src/contexts/MediaContext',
+        './UserContext': './src/contexts/UserContext',
         './apiHooks': './src/hooks/apiHooks',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],

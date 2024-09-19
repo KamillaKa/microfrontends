@@ -1,4 +1,4 @@
-import useUserContext from 'mediastore/UserContext';
+import { useUserContext } from 'mediastore/contextHooks';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
