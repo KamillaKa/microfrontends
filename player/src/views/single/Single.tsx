@@ -1,7 +1,7 @@
-import CommentArea from '@/components/comments/CommentArea';
+import CommentArea from 'mediastore/CommentArea';
 import VideoPlayer from '@/components/player/VideoPlayer';
-import Sidebar from '@/components/sidebar/Sidebar';
-import { useMediaContext } from '@/hooks/contextHooks';
+import Sidebar from 'front_and_sidebar/Sidebar';
+import { useMediaContext } from 'mediastore/contextHooks';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

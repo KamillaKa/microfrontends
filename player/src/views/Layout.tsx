@@ -1,5 +1,4 @@
-import TopBar from '@/components/TopBar';
-import { useUserContext } from '@/hooks/contextHooks';
+import { useUserContext } from 'mediastore/contextHooks';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
@@ -11,7 +10,6 @@ const Layout = () => {
 
   return (
     <>
-      <TopBar />
       <main>
         <Outlet />
       </main>

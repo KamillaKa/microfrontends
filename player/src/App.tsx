@@ -1,13 +1,10 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './views/home/Home';
-import Single from './views/single/Single';
-import Profile from './views/profile/Profile';
-import Upload from './views/upload/Upload';
-import { UserProvider } from './contexts/UserContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import { UserProvider } from 'mediastore/UserContext';
+import ProtectedRoute from 'mediastore/ProtectedRoute';
 import Layout from './views/Layout';
-import { MediaProvider } from './contexts/MediaContext';
+import { MediaProvider } from 'mediastore/MediaContext';
 
 function App() {
   return (
@@ -17,13 +14,10 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/single/:id" element={<Single />} />
-              <Route path="/profile" element={<Profile />} />
               <Route
                 path="/upload"
                 element={
                   <ProtectedRoute>
-                    <Upload />
                   </ProtectedRoute>
                 }
               />

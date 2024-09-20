@@ -1,17 +1,10 @@
-import { useMediaContext } from '@/hooks/contextHooks';
-import FrontThumbnail from './FrontThumbnail';
+import { MediaContextType } from '@sharedTypes/DBTypes';
+import Front from 'front_and_sidebar/Front';
+import { useMediaContext } from 'mediastore/contextHooks';
 
 const Home = () => {
-  const { mediaItems } = useMediaContext();
-
-  return (
-    <div className="flex flex-wrap">
-      {mediaItems &&
-        mediaItems.map((mediaItem) => (
-          <FrontThumbnail key={mediaItem._id} mediaItem={mediaItem} />
-        ))}
-    </div>
-  );
+  const { mediaItems } = useMediaContext() as MediaContextType;
+  return <div>{mediaItems && <Front mediaItems={mediaItems} />}</div>;
 };
 
 export default Home;

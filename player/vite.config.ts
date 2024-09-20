@@ -5,9 +5,13 @@ import federation from '@originjs/vite-plugin-federation';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     federation({
       name: 'player',
+      remotes: {
+        mediastore: 'mediastore@http://localhost:3001/remoteEntry.js',
+      },
       filename: 'remoteEntry.js',
       exposes: {
         './PlayerButton': './src/components/player/VideoButtons',

@@ -48,4 +48,4 @@ export default tseslint.config({
   },
 })
 ```
-# juutube-react
+# juutube-front-and-sidebar-starter
