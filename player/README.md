@@ -48,4 +48,4 @@ export default tseslint.config({
   },
 })
 ```
-# juutube-front-and-sidebar-starter
+# juutube-player
